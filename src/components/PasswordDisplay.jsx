@@ -63,7 +63,7 @@ export default function PasswordDisplay({ password }) {
         <div className="mb-2 flex items-center justify-between text-xs">
           <span className="text-slate-500">Password strength</span>
 
-          <span className={`font-medium ${strength==="strong"?"text-green-400":strength==="medium"?"text-amber-300":strength==="weak"?"text-red-400":""}`}>
+          <span className={`font-medium ${strength==="strong"?"text-green-400":strength==="medium"?"text-amber-300":strength==="weak"?"text-red-400":"text-amber-400"}`}>
             {strength === "" ? "Not tested" : strength}
           </span>
         </div>
