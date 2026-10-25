@@ -17,9 +17,9 @@ A modern, responsive password generator built with **React, JavaScript, and Tail
 
 ## 🖥️ Live Demo
 
-**Live Demo:** Add your deployed project URL here.
+**Live Demo:** [Password Generator](https://password-generator-ankitsingh.netlify.app/)
 
-**GitHub Repository:** Add your GitHub repository URL here.
+**GitHub Repository:** [View Source Code](https://github.com/AnkitSingh9933/password-generator)
 
 ## 🛠️ Tech Stack
 
@@ -72,7 +72,7 @@ password-generator/
 └── vite.config.js
 ```
 
-### 📂 Key Files
+## 📂 Key Files
 
 - **`App.jsx`** — Main application component.
 - **`Header.jsx`** — Displays the application header.
@@ -102,7 +102,7 @@ Follow these steps to run the project locally.
 **1. Clone the repository**
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone https://github.com/AnkitSingh9933/password-generator.git
 ```
 
 **2. Navigate to the project directory**
