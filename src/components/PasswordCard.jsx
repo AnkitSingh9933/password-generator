@@ -27,9 +27,7 @@ export default function PasswordCard() {
     if (symbol) {
       str += "!@#$%^&*()_+=-/.,<>~`";
     }
-    //  if(!password){
-    //   return;
-    //  }
+
     for (let i = 0; i < length; i++) {
       let char = Math.floor(Math.random() * str.length);
       pass += str.charAt(char);
@@ -39,24 +37,30 @@ export default function PasswordCard() {
   };
 
   return (
-    <section className="rounded-3xl border border-white/10 bg-white/[0.045] p-5 shadow-2xl shadow-black/20 backdrop-blur-xl sm:p-7">
+    <section className="relative rounded-3xl border border-white/[0.1] bg-slate-900/50 p-6 shadow-2xl shadow-black/40 backdrop-blur-2xl ring-1 ring-white/[0.06] sm:p-8">
+      {/* Subtle top edge glow highlight */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-8 -top-px h-px bg-gradient-to-r from-transparent via-violet-400/40 to-transparent"
+      />
+
       <div className="mb-7 flex items-start justify-between gap-4">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-violet-300">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-violet-400">
             Password generator
           </p>
-          <h2 className="mt-2 text-xl font-semibold text-white sm:text-2xl">
+          <h2 className="mt-1.5 text-xl font-bold tracking-tight text-white sm:text-2xl">
             Build your password
           </h2>
-          <p className="mt-2 text-sm text-slate-400">
+          <p className="mt-1.5 text-sm text-slate-400">
             Choose your settings, then generate.
           </p>
         </div>
-        <div className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl border border-white/10 bg-white/5 text-violet-200">
+        <div className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-violet-400/20 bg-gradient-to-br from-violet-500/15 via-indigo-500/10 to-transparent text-violet-300 shadow-inner shadow-violet-500/10">
           <svg
             viewBox="0 0 24 24"
             fill="none"
-            className="h-5 w-5"
+            className="h-6 w-6"
             aria-hidden="true"
           >
             <path
@@ -75,10 +79,10 @@ export default function PasswordCard() {
           </svg>
         </div>
       </div>
-      <div className="space-y-7">
+      <div className="space-y-6 sm:space-y-7">
         <PasswordDisplay password={password} />
         <PasswordLength length={length} setLength={setLength} />
-        <div className="h-px bg-white/8" />
+        <div className="h-px bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" />
         <CharacterOptions
           upperCase={upperCase}
           lowerCase={lowerCase}
@@ -91,7 +95,7 @@ export default function PasswordCard() {
         />
         <GenerateButton passwordGenerate={passwordGenerate} />
       </div>
-      <div className="mt-6 flex items-center justify-center gap-2 border-t border-white/8 pt-5 text-xs text-slate-500">
+      <div className="mt-7 flex items-center justify-center gap-2 border-t border-white/[0.07] pt-5 text-xs font-medium text-slate-400">
         <svg
           viewBox="0 0 24 24"
           fill="none"

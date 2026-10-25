@@ -13,20 +13,56 @@ function TipIcon({ type }) {
 export default function SecurityTips() {
   return (
     <aside id="tips" className="space-y-4">
-      <div className="mb-5">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">Stay protected</p>
-        <h2 className="mt-2 text-xl font-semibold text-white">A little security goes a long way.</h2>
-        <p className="mt-2 text-sm leading-6 text-slate-400">Small habits can make a meaningful difference to your online safety.</p>
+      <div className="mb-6">
+        <p className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-400">
+          Stay protected
+        </p>
+        <h2 className="mt-1.5 text-xl font-bold tracking-tight text-white">
+          A little security goes a long way.
+        </h2>
+        <p className="mt-1.5 text-sm leading-relaxed text-slate-400">
+          Small habits can make a meaningful difference to your online safety.
+        </p>
       </div>
+
       {tips.map((tip) => (
-        <article key={tip.number} className="flex gap-4 rounded-2xl border border-white/8 bg-white/[0.035] p-4 transition hover:border-white/15 hover:bg-white/[0.055]">
-          <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-cyan-300/15 bg-cyan-300/[0.07] text-cyan-200"><TipIcon type={tip.icon} /></div>
-          <div><div className="flex items-center gap-2"><h3 className="text-sm font-semibold text-slate-100">{tip.title}</h3><span className="text-[10px] font-medium tracking-wider text-slate-600">{tip.number}</span></div><p className="mt-1.5 text-sm leading-6 text-slate-400">{tip.description}</p></div>
+        <article
+          key={tip.number}
+          className="group flex gap-4 rounded-2xl border border-white/[0.08] bg-slate-900/40 p-4.5 backdrop-blur-md transition-all duration-200 hover:border-cyan-400/30 hover:bg-slate-900/60 hover:shadow-lg hover:shadow-cyan-950/20"
+        >
+          <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-cyan-400/20 bg-cyan-400/[0.08] text-cyan-300 shadow-inner shadow-cyan-500/10 transition-transform duration-200 group-hover:scale-105">
+            <TipIcon type={tip.icon} />
+          </div>
+          <div>
+            <div className="flex items-center gap-2.5">
+              <h3 className="text-sm font-bold tracking-wide text-slate-100">
+                {tip.title}
+              </h3>
+              <span className="rounded-md border border-white/[0.06] bg-black/30 px-2 py-0.5 font-mono text-[10px] font-semibold tracking-wider text-slate-400">
+                {tip.number}
+              </span>
+            </div>
+            <p className="mt-1.5 text-sm leading-relaxed text-slate-400">
+              {tip.description}
+            </p>
+          </div>
         </article>
       ))}
-      <div id="about" className="rounded-2xl border border-violet-300/15 bg-gradient-to-br from-violet-500/10 to-indigo-500/5 p-4">
-        <div className="flex items-center gap-2 text-sm font-semibold text-violet-100"><span className="text-violet-300">✦</span>Privacy first</div>
-        <p className="mt-2 text-sm leading-6 text-slate-400">This is a starter UI. Add password-generation and copy logic yourself; keep generated passwords out of logs and analytics.</p>
+
+      <div
+        id="about"
+        className="relative overflow-hidden rounded-2xl border border-violet-400/20 bg-gradient-to-br from-violet-500/10 via-indigo-500/5 to-transparent p-5 backdrop-blur-md shadow-md shadow-violet-950/20"
+      >
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-violet-400/30 to-transparent"
+        />
+        <div className="flex items-center gap-2 text-sm font-bold text-violet-200">
+          <span className="text-violet-400">✦</span> Privacy first
+        </div>
+        <p className="mt-2 text-sm leading-relaxed text-slate-400">
+          This is a starter UI. Add password-generation and copy logic yourself; keep generated passwords out of logs and analytics.
+        </p>
       </div>
     </aside>
   );
