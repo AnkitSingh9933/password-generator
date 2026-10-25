@@ -1,23 +1,33 @@
 export default function PasswordLength({ length, setLength }) {
   return (
     <div>
-      <div className="mb-3.5 flex items-center justify-between gap-3">
+      {/* ── Header row: label + large LED readout ── */}
+      <div className="mb-4 flex items-end justify-between gap-4">
         <div>
           <label
             htmlFor="password-length"
-            className="text-xs font-semibold uppercase tracking-wider text-slate-300"
+            className="flex items-center gap-1.5 text-[11px] font-mono font-semibold uppercase tracking-wider text-slate-400"
           >
-            Password length
+            <span className="h-1.5 w-1.5 rounded-full bg-cyan-400 shadow-[0_0_5px_#22d3ee]" />
+            KEY_LENGTH // ENTROPY
           </label>
-          <span className="block text-[11px] text-slate-500">
-            Recommended: 14+ characters
+          <span className="mt-0.5 block text-[11px] font-mono text-slate-600">
+            REC_THRESHOLD: 14+ CHARACTERS
           </span>
         </div>
-        <span className="inline-flex min-w-14 items-center justify-center rounded-xl border border-violet-400/30 bg-violet-500/15 px-3 py-1 font-mono text-base font-bold text-violet-300 shadow-sm shadow-violet-950/30">
-          {length}
-        </span>
+
+        {/* Large digital counter */}
+        <div className="text-right leading-none">
+          <div className="font-mono text-4xl font-black tabular-nums text-cyan-300 drop-shadow-[0_0_24px_rgba(34,211,238,0.5)] sm:text-5xl">
+            {String(length).padStart(2, "0")}
+          </div>
+          <div className="mt-1 text-[10px] font-mono font-semibold tracking-[0.25em] text-cyan-500/55">
+            CHARS
+          </div>
+        </div>
       </div>
 
+      {/* ── Slider ── */}
       <input
         id="password-length"
         aria-label="Password length"
@@ -25,16 +35,22 @@ export default function PasswordLength({ length, setLength }) {
         min="6"
         max="32"
         value={length}
-        className="h-2 w-full cursor-pointer appearance-none rounded-lg bg-slate-800/90 accent-violet-500 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-400"
+        className="h-4 w-full cursor-pointer appearance-none rounded-lg accent-cyan-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
         onChange={(e) => setLength(Number(e.target.value))}
       />
 
-      <div className="mt-2.5 flex justify-between text-[11px] font-medium text-slate-500">
+      {/* ── Min / max labels ── */}
+      <div className="mt-3 flex justify-between text-[11px] font-mono font-medium text-slate-600">
         <span className="flex items-center gap-1.5">
-          <span className="h-1 w-1 rounded-full bg-slate-600" /> 6 min
+          <span className="h-1 w-1 rounded-full bg-cyan-500/50" />
+          06 MIN
+        </span>
+        <span className="hidden text-slate-700 sm:inline-block">
+          ─── OPTIMAL RANGE [16 – 24] ───
         </span>
         <span className="flex items-center gap-1.5">
-          <span className="h-1 w-1 rounded-full bg-slate-600" /> 32 max
+          32 MAX
+          <span className="h-1 w-1 rounded-full bg-cyan-500/50" />
         </span>
       </div>
     </div>
