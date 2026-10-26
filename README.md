@@ -2,6 +2,12 @@
 
 A modern, responsive password generator built with **React, JavaScript, and Tailwind CSS**. Generate passwords with customizable options, evaluate password strength, and copy passwords to the clipboard with a single click.
 
+## 🖥️ Live Demo
+
+**Live Demo:** [Password Generator](https://password-generator-ankitsingh.netlify.app/)
+
+**GitHub Repository:** [View Source Code](https://github.com/AnkitSingh9933/password-generator)
+
 ## ✨ Features
 
 - 🔑 Generate random passwords
@@ -12,14 +18,10 @@ A modern, responsive password generator built with **React, JavaScript, and Tail
 - 💪 Dynamic password strength indicator
 - 📋 Copy generated passwords to the clipboard
 - ✅ Copy-success feedback message
+- ⚠️ Validation and error messages
+- 🔄 Automatically regenerate passwords when settings change
 - 📱 Responsive user interface
 - 🧩 Reusable React components and custom hooks
-
-## 🖥️ Live Demo
-
-**Live Demo:** [Password Generator](https://password-generator-ankitsingh.netlify.app/)
-
-**GitHub Repository:** [View Source Code](https://github.com/AnkitSingh9933/password-generator)
 
 ## 🛠️ Tech Stack
 
@@ -28,21 +30,36 @@ A modern, responsive password generator built with **React, JavaScript, and Tail
 - **Tailwind CSS** — Styling and responsive design
 - **Vite** — Development server and build tool
 - **Clipboard API** — Copy passwords to the clipboard
+- **Git & GitHub** — Version control and source code management
+- **Netlify** — Deployment and hosting
 
 ## 🧠 Concepts Used
 
 - React Functional Components and Props
-- React State with `useState`
+- State management with `useState`
+- Side effects with `useEffect`
+- Function memoization with `useCallback`
 - Custom React Hooks
-- Reusable JavaScript Functions
-- Object Destructuring
-- Conditional Rendering
-- Array Methods (`map`)
-- Regular Expressions (Regex)
+- Component-based architecture
+- Conditional rendering
+- Event handling
+- Object destructuring
+- Array methods
+- Regular expressions (Regex)
 - Asynchronous JavaScript (`async/await`)
-- Error Handling (`try...catch`)
-- Clipboard API
-- Component-Based Architecture
+- Error handling (`try...catch`)
+- Clipboard API integration
+- Form validation and UI feedback
+
+## ⚙️ How It Works
+
+1. Select your desired password length.
+2. Choose which character types to include.
+3. Generate a password using your selected options.
+4. Review the password strength indicator.
+5. Copy the generated password with the copy button.
+
+The application validates the selected character options and displays an error if no character type is selected.
 
 ## 📁 Project Structure
 
@@ -74,18 +91,20 @@ password-generator/
 
 ## 📂 Key Files
 
-- **`App.jsx`** — Main application component.
-- **`Header.jsx`** — Displays the application header.
-- **`PasswordCard.jsx`** — Organizes the password generator interface.
-- **`CharacterOptions.jsx`** — Provides character-type selection options.
-- **`PasswordLength.jsx`** — Controls the desired password length.
-- **`GenerateButton.jsx`** — Triggers password generation.
-- **`PasswordDisplay.jsx`** — Displays the password, copy button, and strength indicator.
-- **`passwordStrength.js`** — Calculates the password strength score and label.
-- **`useCopyPassword.jsx`** — Custom hook for clipboard copying and copy-status feedback.
-- **`SecurityTips.jsx`** — Displays password security tips.
-- **`index.css`** — Contains global styles and Tailwind CSS setup.
-- **`main.jsx`** — Mounts the React application.
+| File | Description |
+|---|---|
+| `App.jsx` | Main application component |
+| `Header.jsx` | Displays the application header |
+| `PasswordCard.jsx` | Organizes the password generator interface |
+| `CharacterOptions.jsx` | Handles character-type selection |
+| `PasswordLength.jsx` | Controls the desired password length |
+| `GenerateButton.jsx` | Triggers password generation |
+| `PasswordDisplay.jsx` | Displays the password, copy button, and strength indicator |
+| `passwordStrength.js` | Evaluates password strength |
+| `useCopyPassword.jsx` | Handles clipboard copying and copy-status feedback |
+| `SecurityTips.jsx` | Displays password security tips |
+| `index.css` | Contains global styles |
+| `main.jsx` | Mounts the React application |
 
 ## 🚀 Getting Started
 
@@ -93,7 +112,7 @@ Follow these steps to run the project locally.
 
 ### Prerequisites
 
-- Node.js
+- [Node.js](https://nodejs.org/)
 - npm
 - Git
 
@@ -125,27 +144,39 @@ npm run dev
 
 Open the local URL displayed in your terminal to use the application.
 
+### Production Build
+
+To create a production build, run:
+
+```bash
+npm run build
+```
+
+To preview the production build locally, run:
+
+```bash
+npm run preview
+```
+
 ## 🔒 Security Note
 
-This project is intended for learning and generating passwords in the browser. Password strength indicators are heuristic estimates and do not guarantee password security. Avoid storing or sharing generated passwords insecurely.
-
-## 📚 What I Learned
-
-Building this project helped me practice React state management, reusable components, custom hooks, asynchronous clipboard operations, conditional rendering, and separating application logic from UI components.
+This project is intended for learning and password generation in the browser. The password strength indicator provides an estimate and does not guarantee security. Avoid storing or sharing generated passwords insecurely.
 
 ## 🔮 Future Improvements
 
-- Add password-strength accessibility improvements.
-- Improve clipboard feedback and timer cleanup.
-- Add automated tests for password generation and strength evaluation.
-- Improve keyboard accessibility.
-- Add an option to exclude similar-looking characters.
+- Add automated tests for password generation and strength evaluation
+- Improve keyboard accessibility
+- Add an option to exclude similar-looking characters
+- Enhance password strength feedback
+- Improve clipboard feedback and cleanup
 
 ## 👨‍💻 Author
 
 **Ankit Singh**
 
 - GitHub: [@AnkitSingh9933](https://github.com/AnkitSingh9933)
+- Project Repository: [Password Generator](https://github.com/AnkitSingh9933/password-generator)
+- Live Application: [Try it here](https://password-generator-ankitsingh.netlify.app/)
 
 ---
 
